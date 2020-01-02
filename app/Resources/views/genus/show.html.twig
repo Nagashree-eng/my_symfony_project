@@ -5,7 +5,7 @@
 {% block body %}
     <h2 class="genus-name">{{ name }}</h2>
     
-    <a href="{{genus_show_notes}}">Json notes</a>
+    <a href="{{"#"}}">Json notes</a>
     <div class="sea-creature-container">
         <div class="genus-photo"></div>
         <div class="genus-details">
@@ -15,7 +15,7 @@
                 <dt>Known Species:</dt>
                 <dd>289</dd>
                 <dt>Fun Fact:</dt>
-                <dd>{{funFact}}</dd>
+                <dd>{{funFact|raw}}</dd>
             </dl>
         </div>
     </div>

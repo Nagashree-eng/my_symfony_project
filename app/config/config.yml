@@ -59,7 +59,16 @@ doctrine:
         auto_generate_proxy_classes: '%kernel.debug%'
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
+     
+#    Now, remember the goal: to get a cache service we can use to avoid processing markdown on each request. When we added KnpMarkdownBundle, we magically had a new service. But with this bundle, we need to configure each service we want.
 
+doctrine_cache:
+    providers:
+        my_markdown_cache:
+            type: file_system
+            file_system:  
+            directory: /tmp/doctrine_cache 
+                  
 # Swiftmailer Configuration
 swiftmailer:
     transport: '%mailer_transport%'
