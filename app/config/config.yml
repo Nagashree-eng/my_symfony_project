@@ -67,8 +67,8 @@ doctrine_cache:
         my_markdown_cache:
             type: file_system
             file_system:  
-                directory: %kernel.root_dir%/doctrine_cache
-                extension: cache
+                directory: /tmp/doctrine_cache
+#                extension: cache
                   
 # Swiftmailer Configuration
 swiftmailer:
