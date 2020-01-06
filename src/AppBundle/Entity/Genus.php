@@ -8,6 +8,8 @@ use Doctrine\ORM\Mapping as ORM;
  
 class Genus
 {
+    
+    
      /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -28,13 +30,22 @@ class Genus
      * @ORM\Column(type="integer")
      */
     private $speciesCount;
+    
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $funFact;
+    /**
+     * @ORM\Column(type="boolean")
      */
     
-    private $funFact;
+    private $isPublished = true;
     
-    public function getSubFamily()
+    public function setIsPublished($isPublished) {
+        $this->isPublished = $isPublished;
+    }
+
+        public function getSubFamily()
     {
         return $this->subFamily;
     }
@@ -66,5 +77,10 @@ class Genus
     public function setName($name)
     {
         $this->name = $name;
+    }
+    
+     public function getUpdatedAt()
+    {
+        return new \DateTime('-'.rand(0, 100).' days');
     }
 }
